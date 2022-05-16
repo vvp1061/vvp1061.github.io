@@ -35,3 +35,14 @@ function fib(n) {
     }
     return b;
 }
+
+function compare(x) {
+    let res = function() {
+        let y = prompt('Введите y');
+        if (x < y) return true
+        else if (x > y) return false
+        else if (x = y) return null;
+    }
+return res();
+
+}
