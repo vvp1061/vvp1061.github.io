@@ -1,17 +1,52 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-	<meta charset="UTF-8">
-	<title>Оформление вертикального меню</title>
-	<link rel="stylesheet" href="style2.css">
+		<meta charset="UTF-8">
+		<title>Оформление вертикального меню</title>
+		<style>
+			html {
+					background: #f0f0f0;
+			}
+			
+			.menu {
+					width: 250px;
+					background: #fff;
+			}
+			
+			ul {
+				list-style-image: url(plus.gif);
+				width: 200px;	
+			}
+			
+			li ul {
+				display:none;
+  				position: relative;
+  				top:0;
+  				width: 150px;	
+			}
+			
+			li:hover {
+				list-style-image: url(minus.gif);	
+			}
+			
+			.menu li ul :hover{
+				list-style-image: url(point.gif);
+			}
+			
+			li:hover ul {
+				display:block;		
+			}
+			
+			.menu li ul{
+  				list-style-image: url(point.gif);
+			}
+	</style>
 </head>
-
 <body>
 	<nav class="menu">
 		<ul>
-			<div class="icon"></div>
-			<li><a class="ss" href="#">Фильмы</a>
+			
+			<li><a href="#">Фильмы</a>
 				<ul>
 					<li><a href="#">Экшн</a></li>
 					<li><a href="#">Мелодрамы</a></li>
@@ -45,5 +80,4 @@
 		</ul>
 	</nav>
 </body>
-
 </html>
