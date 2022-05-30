@@ -1,0 +1,42 @@
+html {
+  background: #f0f0f0;
+}
+body{
+background: lightcyan;
+}
+
+ul{
+list-style-image: url(plus.gif);
+width: 200px;
+}
+li ul{
+display:none;
+position: relative;
+top:0;
+width: 150px;
+}
+li:hover {
+list-style-image: url(minus.gif);
+}
+
+.menu li ul  :hover{
+list-style-image: url(point.gif);
+}
+
+li:hover ul{
+display: block;
+}
+
+
+
+.menu {
+  width: 200px;
+  background: lightcyan;
+}
+
+
+
+.menu li ul{
+list-style-image: url(point.gif);
+}
+
