@@ -1,0 +1,32 @@
+body{
+	background-color: rgb(34, 32, 32);;
+	color: white;
+}
+p{
+	text-align: right;
+}
+h1,h2{
+	text-align: right;
+	color: red;
+	font-family: Pragmatica, Helvetica, Arial, sans-serif;
+}
+em{
+	color: green;
+}
+
+@media print{
+body{
+	background-color: white;
+	color: black;
+}
+h1,h2{
+	color: black;
+}
+em{
+	color: black;
+}
+hr{
+	background-color: black;
+}
+}
+
