@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8">
+	<title>Главная страница</title>
+	<link type="text/css" rel="stylesheet" href="css/main.css">
+	<style>
+		#outer {
+			margin-top: 10px;
+			margin-bottom: 10px;
+
+			max-height: 75%;
+			min-height: 100px;
+		}
+
+		#header {
+			height: 100px;
+			width: 100%;
+			background-color: #f0c9f1;
+		}
+
+		#left {
+			float: left;
+			width: 200px;
+			background-image: url("left.png");
+
+			min-height: 100px;
+			max-height: 100vh - 100px;
+		}
+
+		#right {
+			float: right;
+			width: 200px;
+			background-image: url("right.png");
+
+			min-height: 100px;
+			max-height: 100vh - 100px;
+		}
+
+		#center {
+			margin-left: 210px;
+			margin-right: 210px;
+
+			min-height: 100px;
+			max-height: 100vh - 100px;
+		}
+
+		#end {
+			height: 100px;
+			width: 100%;
+			background-color: #D8BFD8;
+		}
+
+		ul {
+			list-style-image: url("plus.png");
+		}
+
+		footer {
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			padding: 10px;
+			background: #b16767;
+			color: #fff;
+			width: 100%;
+		}
+	</style>
+
+	<script type="text/javascript">
+		window.addEventListener("resize", setWidth, false);
+
+		function setWidth(e) {
+			var left = document.getElementById("left");
+			var right = document.getElementById("right");
+			var center = document.getElementById("center");
+
+			left.style.height = center.clientHeight + 'px';
+			right.style.height = center.clientHeight + 'px';
+		}
+	</script>
+
+</head>
+
+<body>
+
+	<div id="header"></div>
+
+	<div id="outer">
+
+		<div id="left">
+			<ul>
+				<li><a href="#">Камень</a></li>
+				<li><a href="#">Ножницы</a></li>
+				<li><a href="#">Бумага</a></li>
+			</ul>
+		</div>
+
+		<div id="right">right</div>
+
+		<div id="center">center center center center center center center center center center center center center
+			center center center center center center center center center center center center center center center
+			center center center center center center center center center center center center center center center
+			center center center center center center center center center center center center center center center
+			center center center center center center center center center center center center center center center
+			center center center center center center center center center</div>
+
+	</div>
+
+	<div id="end"></div>
+	<footer>
+		<div>footer<div>
+	</footer>
+</body>
+
+</html>
