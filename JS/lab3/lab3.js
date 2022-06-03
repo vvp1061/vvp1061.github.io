@@ -1,6 +1,10 @@
 'use strict';
+
 function getDecimal(num) {
-    let a = num.slice(num.indexOf("."));
+    let a = num.slice(num.indexOf('.'));
+    if (num.indexOf(".") == -1) {
+        return 0;
+    }
     let str = 0 + a;
     if (Number(num) < 0) {
         str = 1 - Number(str);
@@ -10,17 +14,34 @@ function getDecimal(num) {
 }
 
 function ucFirst(str) {
-    return (str[0].toUpperCase() + str.slice(1));
+    if (!str) return str;
+
+    return str[0].toUpperCase() + str.slice(1);
 }
-let str = prompt("Введи строку");
-alert(ucFirst(str));
 
 function checkSpam(str) {
-    str = str.toLowerCase();
-    if ((str.includes('xxx')) || (str.includes('viagra')))
+    let firstWord = 'viagra';
+    let secondWord = 'xxx';
+    let string = str.toLowerCase();
+    let result;
+
+    if (checkTheWord(firstWord) || checkTheWord(secondWord)) {
         return true;
-    else return false;
+    }
+    return false;
+
+    function checkTheWord(word) {
+        for (let i = 0; i < string.length - 1; i++) {
+            if (string[i] == word[0]) {
+                result = string.slice(i, i + word.length);
+                if (result == word) {
+                    return true;
+                } else return false;
+            } else return false;
+        }
+    }
 }
+
 
 function truncate(str, maxlength) {
     if (str.length > maxlength)
@@ -28,47 +49,57 @@ function truncate(str, maxlength) {
     return str;
 }
 
+
 function camelize(str) {
-    let id;
-    while (str.includes("-")) {
-        id = str.indexOf('-');
-        str = str.slice(0, id) + str[id + 1].toUpperCase() + str.substring(id + 2);
-    }
+    return str
+        .split('-')
+        .map(
+            (word, index) => index == 0 ? word : word[0].toUpperCase() + word.slice(1)
+        )
+        .join('');
+}
+
+function fibs(N) {
+    let a = [];
+    let str = '';
+    if (!Number.isNaN(N))
+        if (N == 0) str = 0;
+        else
+            for (let j = 0; j < N; ++j) {
+                a[j] = fib(j);
+                str += a[j] + ' ';
+            }
+    else str = NaN;
+
     return str;
-}
-       function fib(n) {
-            let count = 0;
-            let n1 = 1,
-                n2 = 1,
-                c = 0;
-            if (n == 0)
-                n2 = 0;
-            else
-            if (n >= 1)
-                if (n >= 2) {
-                    for (let i = 2; i < n; i++) {
-                        c = n2;
-                        n2 = n1 + n2;
-                        n1 = c;
-                    }
-                }
-            return n2;
+
+    function fib(j) {
+        let a = 1 n;
+        let b = 1 n;
+        let c;
+        if (j == 0) return 0;
+        if (j == 1) return 1;
+        if (j == 2) return 1;
+        for (let i = 3; i <= j; i++) {
+            c = a + b;
+            a = b;
+            b = c;
         }
-
-function arrReverseSorted(arr){
-arr_reserve=[];
-
-arr_reserve=arr.sort((a, b) => b - a);
-
-alert(arr_reserve);
+        if (b == 1 n)
+            b = 0;
+        return b;
+    }
 }
+
+
+
 
 function sum() {
     let result = 0;
-  
+
     for (let i = 0; i < arguments.length; i++) {
-      result += arguments[i];
+        result += arguments[i];
     }
-  
+
     return result;
-  }
+}
