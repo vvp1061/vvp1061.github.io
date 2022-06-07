@@ -1,32 +1,47 @@
 <!DOCTYPE html>
-
 <html lang="ru">
-
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 3</title>
+</head>
 <body>
     <script>
-        "use strict";
+        'use strict';
+        let book1={};
 
-        function isEmpty(obj) {
-            for (let key in obj) {
-                return false;
-            }
-            return true;
-        }
-        let book1 = {};
-        alert(isEmpty(book1));
+        console.log("book1 пуста:"+ isEmpty(book1));
 
         book1.title = "1984";
         book1.pubYear = 1949;
         book1.price = 450;
-        alert(isEmpty(book1));
-        let book2 = {
+        book1.show = function(){
+            console.log(book1.title +" - "+ book1.price);
+        }
+
+        console.log("book1 пуста:"+ isEmpty(book1));
+
+        function showBook(){
+            console.log(this.title +' - '+ this.price);
+        }
+           
+        function isEmpty(obj) {
+            for (let key in obj) {
+                    return false;
+                }
+                return true;
+            }
+
+
+        let book2={
             title: "Страх и отвращение в Лас-Вегасе",
             pubYear: 1971,
             price: 1000,
             show: showBook
         };
-        alert(isEmpty(book2));
+        console.log("book2 пуста:"+ isEmpty(book2));
+
     </script>
 </body>
-
 </html>
