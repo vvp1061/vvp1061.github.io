@@ -51,8 +51,8 @@ function fibs(N) {
     return str;
 
     function fib(j) {
-        let a = 1 n;
-        let b = 1 n;
+        let a = 1n;
+        let b = 1n;
         let c;
         if (j == 0) return 0;
         if (j == 1) return 1;
@@ -62,7 +62,7 @@ function fibs(N) {
             a = b;
             b = c;
         }
-        if (b == 1 n)
+        if (b == 1n)
             b = 0;
         return b;
     }
