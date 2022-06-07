@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="ru">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="lab2.js"></script>
+</head>
+
 <body>
-    <script src='lab2.js'></script>
     <script>
         'use strict'
         let n = prompt('Введите n');
-        let y = fib(n);
-        alert(`${n}-е число Фибоначи это ${y}`);
+
+        if (n < 0) {
+            alert('n>=0');
+        } else {
+            alert(n + 'Число Фибоначчи: ' + fib(n));
+        }
     </script>
 </body>
-
-</html>
