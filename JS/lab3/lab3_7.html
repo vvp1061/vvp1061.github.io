@@ -1,16 +1,21 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="ru">
 
 <body>
-<script src="lab3.js"></script>
-  <script>
-    "use strict";
-    arr=[];
-    let n=prompt("Введитие количество элемов массива");
-    for(let i=0;i<n;i++){
-        arr[i]=prompt("введите элем массива");
-    }
-    alert(arrReverseSorted(arr));
-</script>
+    <script src="lab3.js"></script>
+    <script>
+        'use strict'
+        let arr = [];
+        let i = 0;
+        let a;
+        while (!Number.isNaN(a)) {
+            a = +prompt("Отсортированный массив\nВведите элементы массива.Для завершения ввода введите любой символ");
+            if (!Number.isNaN(a))
+                arr[i] = +a;
+            i++;
+        }
+        console.log(arrReverseSorted(arr));
+    </script>
 </body>
-</html> 
+
+</html>
