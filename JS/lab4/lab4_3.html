@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<body>
+    <script>
+        "use strict";
+
+        function isEmpty(obj) {
+            for (let key in obj) {
+                return false;
+            }
+            return true;
+        }
+        let book1 = {};
+        alert(isEmpty(book1));
+
+        book1.title = "1984";
+        book1.pubYear = 1949;
+        book1.price = 450;
+        alert(isEmpty(book1));
+        let book2 = {
+            title: "Страх и отвращение в Лас-Вегасе",
+            pubYear: 1971,
+            price: 1000,
+            show: showBook
+        };
+        alert(isEmpty(book2));
+    </script>
+</body>
+
+</html>
