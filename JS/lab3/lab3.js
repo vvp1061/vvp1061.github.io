@@ -1,14 +1,15 @@
 'use strict';
 
 function getDecimal(num) {
-    let b = num.indexOf(".");
-    let a = num.slice(b);
-        let str = 0 + a;
+    let a = num.toString();
+    a = a.slice(a.indexOf("."));
+    
+    let str = 0 + a;
     if (Number(num) < 0) {
         str = 1 - Number(str);
         str = str.toFixed(a.length - 1);
     }
-    return str; // преобразоать 2 раза
+    return str; // преобразоать в строку
 }
 function ucFirst(str) {
     return (str[0].toUpperCase() + str.slice(1));

@@ -59,17 +59,17 @@ function fib(n) {
  * @param {number} x - одно из ставниваемых чисел
  * @returns функцию
  */
-function compare(x) {
-    let res = function() {
-        let y = prompt('Введите число y');
-        if (y > x) return true
-        else if (y < x) return false
-        else return null;
+ function compare(x)
+ {
+     return function(y){
+     if(x>y){ return true;}
+     if(x<y){return false;}
+     if(x==y){return null;}
+     
+     }
+     
+ }	
 
-    }
-    return res();
-
-}
 /**
  * 
  * @param {number} num - число
