@@ -36,39 +36,39 @@ function factorial(n) {
     return multiplier;
 }
 
- /**
+/**
  * 
  * @param {Number} n - е число число Фибоначчи
  * @returns возвращает n - e число Фибоначчи
  */
- function fib(n) {
-  let a = 1n;
-  let b = 1n;
- if (n==0) return 0;
- if (n==1) return 1;
- if (n==2) return 1;
-  for (let i = 3; i <= n; i++) {
-    let c = a + b;
-    a = b;
-    b = c;
-  }
-  return b;
+function fib(n) {
+    let a = 1n;
+    let b = 1n;
+    if (n == 0) return 0;
+    if (n == 1) return 1;
+    if (n == 2) return 1;
+    for (let i = 3; i <= n; i++) {
+        let c = a + b;
+        a = b;
+        b = c;
+    }
+    return b;
 }
 /**
  * 
  * @param {Number} x - одно из ставниваемых чисел
  * @returns функцию
  */
-function compare(x){
-  let res=function(){
-    let y=prompt('Введите число y');
-    if (y>x) return true
-      else if (y<x) return false
-	else return null;
-    
-  }
-  return res();
-  
+function compare(x) {
+    let res = function() {
+        let y = prompt('Введите число y');
+        if (y > x) return true
+        else if (y < x) return false
+        else return null;
+
+    }
+    return res();
+
 }
 /**
  * 
@@ -77,19 +77,16 @@ function compare(x){
  * @returns {string} - на вывод
  * 
  */
- function printNumbers(num, cols) {
-  let str1 = ""
-  let rows = Math.ceil(num / cols); 
-  for (let row = 0; row < rows; ++row) {
-      let str = '';
-      for (let col = 0; col < cols; ++col) {
-          if ((row + rows * col) < num)
-              str += (row + rows * col) + ' ';
-      }
-      str1+=str+"\n";       
-  }
-  return str1;
+function printNumbers(num, cols) {
+    let str1 = ""
+    let rows = Math.ceil(num / cols);
+    for (let row = 0; row < rows; ++row) {
+        let str = '';
+        for (let col = 0; col < cols; ++col) {
+            if ((row + rows * col) < num)
+                str += (row + rows * col) + ' ';
+        }
+        str1 += str + "\n";
+    }
+    return str1;
 }
-
-
-
