@@ -1,15 +1,15 @@
 'use strict';
 
 function getDecimal(num) {
-    let a = num.slice(num.indexOf("."));
-    let str = 0 + a;
+    let b = num.indexOf(".");
+    let a = num.slice(b);
+        let str = 0 + a;
     if (Number(num) < 0) {
         str = 1 - Number(str);
         str = str.toFixed(a.length - 1);
     }
-    return str;
+    return str; // преобразоать 2 раза
 }
-
 function ucFirst(str) {
     return (str[0].toUpperCase() + str.slice(1));
 }
@@ -23,7 +23,7 @@ function checkSpam(str) {
 
 function truncate(str, maxlength) {
     if (str.length > maxlength)
-        str = str.slice(0, maxlength) + '\u{2026}';
+        str = str.slice(0, maxlength-1) + '\u{2026}'; 
     return str;
 }
 
@@ -35,6 +35,7 @@ function camelize(str) {
     }
     return str;
 }
+
 
 function fibs(N) {
     let a = [];
@@ -66,11 +67,7 @@ function fibs(N) {
             b = 0;
         return b;
     }
-}
-
-
-
-
+} // массивом
 
 
 
@@ -80,7 +77,7 @@ function arrReverseSorted(arr) {
     arr_reserve = arr.sort((a, b) => b - a);
 
     alert(arr_reserve);
-}
+} // return
 
 function sum() {
     let result = 0;
