@@ -23,7 +23,7 @@ function sumTo(n) {
 }
 /**
  * Функция находит факториал введенного числа n
- * @param {*} n 
+ * @param {number} n 
  * @returns 
  */
 function factorial(n) {
@@ -38,7 +38,7 @@ function factorial(n) {
 
 /**
  * 
- * @param {Number} n - е число число Фибоначчи
+ * @param {number} n - е число число Фибоначчи
  * @returns возвращает n - e число Фибоначчи
  */
 function fib(n) {
@@ -56,7 +56,7 @@ function fib(n) {
 }
 /**
  * 
- * @param {Number} x - одно из ставниваемых чисел
+ * @param {number} x - одно из ставниваемых чисел
  * @returns функцию
  */
 function compare(x) {
