@@ -23,6 +23,7 @@ function checkSpam(str) {
 }
 
 function truncate(str, maxlength) {
+    if (maxlength == 0) str = (''); else
     if (str.length > maxlength)
         str = str.slice(0, maxlength-1) + '\u{2026}'; 
     return str;
@@ -63,8 +64,6 @@ function fib(p){
 
    return a;
 }
-
-
 
 function arrReverseSorted(arr) {
     let arr_reserve = [];
