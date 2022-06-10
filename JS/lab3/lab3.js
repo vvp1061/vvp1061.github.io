@@ -66,11 +66,8 @@ function fib(p){
 }
 
 function arrReverseSorted(arr) {
-    let arr_reserve = [];
-
-    arr_reserve = arr.sort((a, b) => b - a);
-
-    return(arr_reserve);
+    arr.sort((a, b) => b - a);
+    return(arr);
 } // return
 
 function sum() {
