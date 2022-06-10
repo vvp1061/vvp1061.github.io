@@ -38,37 +38,31 @@ function camelize(str) {
 }
 
 
+
 function fibs(N) {
-    let a = [];
-    let str = '';
-    if (!Number.isNaN(N))
-        if (N == 0) str = 0;
-        else
-            for (let j = 0; j < N; ++j) {
-                a[j] = fib(j);
-                str += a[j] + ' ';
-            }
-    else str = NaN;
 
-    return str;
+function fib(p){
+       let a = 0n;
+       let b = 1n;
+       
+       if (p==0) return a;
+       if (p==1) return b;
+       for (let i = 2; i <= p; i++) {
+         let c = a + b;
+         a = b;
+         b = c;
+       }
+       return b;
+     }
+   let a = [];
+   if (!Number.isNaN(N))
+           for (let p = 0; p < N; ++p) {
+               a[p] = fib(p);
+           }
+   else return NaN;
 
-    function fib(j) {
-        let a = 1n;
-        let b = 1n;
-        let c;
-        if (j == 0) return 0;
-        if (j == 1) return 1;
-        if (j == 2) return 1;
-        for (let i = 3; i <= j; i++) {
-            c = a + b;
-            a = b;
-            b = c;
-        }
-        if (b == 1n)
-            b = 0;
-        return b;
-    }
-} // массивом
+   return a;
+}
 
 
 
@@ -77,7 +71,7 @@ function arrReverseSorted(arr) {
 
     arr_reserve = arr.sort((a, b) => b - a);
 
-    alert(arr_reserve);
+    return(arr_reserve);
 } // return
 
 function sum() {

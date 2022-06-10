@@ -3,6 +3,7 @@
 
 <body>
     <script>
+        
         "use strict";
         let book1 = {};
 
@@ -15,18 +16,17 @@
             pubYear: 1971,
             price: 1000,
         };
-        for (let key in book1) {
 
-            alert(key);
+        console.log("book1:");
+        for (let prop in book1)
+            console.log(prop + ":" + book1[prop]);
 
-            alert(book1[key]);
-        }
-        for (let key in book2) {
+        console.log("\n");
 
-            alert(key);
+        console.log("book2:");
+        for (let prop in book2)
+            console.log(prop + ":" + book2[prop]);
 
-            alert(book2[key]);
-        }
     </script>
 </body>
 

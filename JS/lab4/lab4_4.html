@@ -1,42 +1,43 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <body>
     <script>
         "use strict";
         let obj = {
-            className: 'open menu'
-        }
+            className: 'open menu',
+            addClass: function (cls) {
+                if (cls == '') return this;
+                if (cls.includes(' ')) {
+                    return this;
+                }
+                if (!this.className.includes(cls)) this.className += ' ' + cls;
+                return this;
+            },
 
-        function addClass(obj, cls) {
-            let subObj = {};
-
-            let arr = obj.className ? obj.className.split(" ") : [];
-
-            for (let i = 0; i < arr.length; i++) {
-                subObj[arr[i]] = true;
+            removeClass: function (cls) {
+                if (cls == '') return this;
+                if (this.className.includes(cls)) {
+                    if (this.className.indexOf(cls) != 0) {
+                        let pos = this.className.indexOf(' ' + cls);
+                        this.className = this.className.substr(0, pos) + this.className.substr(pos + cls
+                            .length + 1);
+                    } else if (this.className.includes(cls + ' ')) {
+                        let pos = this.className.indexOf(cls + ' ');
+                        this.className = this.className.substr(0, pos) + this.className.substr(pos + cls
+                            .length + 1);
+                    } else {
+                        let pos = this.className.indexOf(cls);
+                        this.className = this.className.substr(0, pos) + this.className.substr(pos + cls
+                            .length + 1);
+                    }
+                }
+                return this;
             }
-
-            subObj[cls] = true;
-
-            arr = Object.keys(subObj);
-
-            obj.className = arr.join(" ");
-        }
-
-        function removeClass(obj, cls) {
-            let sub = " " + obj.className + " ";
-            sub = sub.replace(" " + cls + " ", " ");
-            obj.className = sub.trim(" ");
-        }
-
-        addClass(obj, 'new');
-        addClass(obj, 'open');
-        addClass(obj, 'me');
-
-        alert(obj.className);
-        removeClass(obj.me);
-        alert(obj.className);
+        };
+        let cls = prompt('Добавьте класс:');
+        console.log(obj.addClass(cls));
+        let cll = prompt('delete class:');
+        console.log(obj.removeClass(cll));
     </script>
 </body>
 
