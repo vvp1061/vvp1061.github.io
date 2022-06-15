@@ -13,7 +13,7 @@ function getDecimal(num) {
 }
 function ucFirst(str) {
     return (str[0].toUpperCase() + str.slice(1));
-}
+} // пустая строка
 
 function checkSpam(str) {
     str = str.toLowerCase();
@@ -63,12 +63,14 @@ function fib(p){
    else return NaN;
 
    return a;
-}
+} // возвращать новый мас
 
-function arrReverseSorted(arr) {
-    arr.sort((a, b) => b - a);
-    return(arr);
-} // return
+function arrReverseSorted(arr){
+   
+    let arr_reserve=arr.slice();
+           
+    return arr_reserve.sort((a, b) => b - a);
+    }
 
 function sum() {
     let result = 0;
