@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск коэффициентов</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Поиск оптимальных коэффициентов</h1>
+        <h2>
+            <p class="description">Максимальная бодовая не может превышать 7.68 Мбод</p>
+        </h2>
+        <hr class="divider">
+        <h2>
+            <p class="descriptionText"><label for="baudRate">Целевая бодовая скорость (Мбод):</label></p>
+        </h2>
+        <input type="number" id="baudRate" step="0.01" placeholder="Например, 7">
+
+        <button onclick="calculateCoefficients()">Рассчитать</button>
+
+        <div id="outputBlock" class="copy-block" onclick="copyToClipboard('output')">
+            <div class="label">Коэффициент Лагранжа</div>
+            <div class="value" id="outputValue"></div>
+        </div>
+
+        <div id="cicBlock" class="copy-block" onclick="copyToClipboard('cic')">
+            <div class="label">Коэффициент CIC</div>
+            <div class="value" id="cicValue"></div>
+        </div>
+        <div id="ratioBlock" class="copy-block" onclick="copyToClipboard('ratio')">
+            <div class="label">Коэффициент ratio</div>
+            <div class="value" id="ratioValue"></div>
+        </div>
+    </div>
+
+    <script src="src/js/script.js"></script>
+</body>
+
+</html>
